@@ -15,7 +15,7 @@ const mainElement = createElement('main', {
       className: 'app__userInput',
     }),
     createElement('div', {
-      className: 'characterContainer',
+      className: 'app__characterContainer',
       childElements: [createCharacterCard()],
     }),
   ],
