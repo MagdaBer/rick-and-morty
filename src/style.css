@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -10,6 +10,6 @@
 }
 
 .app__title {
-  font-family: 'Fredericka the Great', cursive;
+  font-family: 'Creepster', cursive;
   font-size: 4rem;
 }
