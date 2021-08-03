@@ -1,3 +1,4 @@
+import { createCharacterCard } from './components/character/character';
 import './style.css';
 import { createElement } from './utils/createElement';
 
@@ -12,6 +13,10 @@ const mainElement = createElement('main', {
     createElement('input', {
       placeholder: 'Search for a character...',
       className: 'app__userInput',
+    }),
+    createElement('div', {
+      className: 'characterContainer',
+      childElements: [createCharacterCard()],
     }),
   ],
 });
