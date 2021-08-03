@@ -9,6 +9,7 @@ title.className = 'app__title';
 
 const input = document.createElement('input');
 input.placeholder = 'Search for a character...';
+input.className = 'app__userInput';
 
 mainElement.append(title, input);
 
