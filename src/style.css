@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
 
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
