@@ -17,24 +17,27 @@ export function createCharacterCard(): HTMLElement {
             innerText: 'Rick Sanchez',
           }),
           createElement('div', {
+            className: 'character-card__status',
             childElements: [
               createElement('p', {
-                className: 'character-card__status',
-                innerText: '🟢 Alive',
+                className: 'character-card__status--icon',
+                innerText: '🟢',
               }),
               createElement('p', {
-                className: 'character-card__species',
+                className: 'character-card__status--text',
+                innerText: 'Alive',
+              }),
+              createElement('p', {
+                className: 'character-card__status--species',
                 innerText: 'Human',
               }),
             ],
           }),
           createElement('div', {
+            className: 'character-card__location',
             childElements: [
-              createElement('h3', { innerText: 'Last known location' }),
-              createElement('p', {
-                className: 'character-card__location',
-                innerText: 'Story Train',
-              }),
+              createElement('h3', { innerText: 'Last known location:' }),
+              createElement('p', { innerText: 'Story Train' }),
             ],
           }),
         ],
