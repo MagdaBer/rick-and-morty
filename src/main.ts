@@ -16,7 +16,11 @@ const mainElement = createElement('main', {
     }),
     createElement('div', {
       className: 'app__characterContainer',
-      childElements: [createCharacterCard()],
+      childElements: [
+        createCharacterCard(),
+        createCharacterCard(),
+        createCharacterCard(),
+      ],
     }),
   ],
 });
