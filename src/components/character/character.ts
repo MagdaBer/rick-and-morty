@@ -1,5 +1,5 @@
 import { createElement } from '../../utils/createElement';
-import './character.css';
+import styles from './character.module.css';
 import type { Character } from '../../types';
 
 export function createCharacterCard({
@@ -10,38 +10,34 @@ export function createCharacterCard({
   image,
 }: Character): HTMLElement {
   return createElement('article', {
-    className: 'character-card',
+    className: styles.card,
     childElements: [
       createElement('img', {
-        className: 'character-card__image',
+        className: styles.image,
         src: image,
       }),
       createElement('section', {
-        className: 'character-card__info',
+        className: styles.info,
         childElements: [
           createElement('h2', {
-            className: 'character-card__name',
+            className: styles.name,
             innerText: name,
           }),
           createElement('div', {
-            className: 'character-card__status',
+            className: styles.status,
             childElements: [
               createElement('p', {
-                className: 'character-card__status--icon',
                 innerText: status === 'Alive' ? '🟢' : '🔴 ',
               }),
               createElement('p', {
-                className: 'character-card__status--text',
                 innerText: status,
               }),
               createElement('p', {
-                className: 'character-card__status--species',
                 innerText: species,
               }),
             ],
           }),
           createElement('div', {
-            className: 'character-card__location',
             childElements: [
               createElement('h3', { innerText: 'Last known location:' }),
               createElement('p', { innerText: location }),
