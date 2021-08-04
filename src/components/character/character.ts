@@ -21,7 +21,7 @@ export function createCharacterCard(character): HTMLElement {
             childElements: [
               createElement('p', {
                 className: 'character-card__status--icon',
-                innerText: '🟢',
+                innerText: status === 'Alive' ? '🟢' : '🔴 ',
               }),
               createElement('p', {
                 className: 'character-card__status--text',
