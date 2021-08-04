@@ -5,13 +5,22 @@ import { createElement } from './utils/createElement';
 
 const app = document.querySelector<HTMLDivElement>('#app');
 
-const character: Character = {
-  name: 'Aqua Rick',
-  status: 'unknown',
-  species: 'Humanoid',
-  location: 'Citadel of Ricks',
-  image: 'https://rickandmortyapi.com/api/character/avatar/22.jpeg',
-};
+const characters: Character[] = [
+  {
+    name: 'Aqua Rick',
+    status: 'unknown',
+    species: 'Humanoid',
+    location: 'Citadel of Ricks',
+    image: 'https://rickandmortyapi.com/api/character/avatar/22.jpeg',
+  },
+  {
+    name: 'Alien Spa Employee',
+    status: 'Alive',
+    species: 'Alien',
+    location: 'Alien Day Spa',
+    image: 'https://rickandmortyapi.com/api/character/avatar/470.jpeg',
+  },
+];
 
 const mainElement = createElement('main', {
   childElements: [
@@ -25,11 +34,9 @@ const mainElement = createElement('main', {
     }),
     createElement('div', {
       className: 'app__characterContainer',
-      childElements: [
-        createCharacterCard(character),
-        createCharacterCard(character),
-        createCharacterCard(character),
-      ],
+      childElements: characters.map((character) =>
+        createCharacterCard(character)
+      ),
     }),
   ],
 });
