@@ -34,4 +34,5 @@
 .character-card__status {
   display: flex;
   justify-content: space-around;
+  padding-right: 2em;
 }
