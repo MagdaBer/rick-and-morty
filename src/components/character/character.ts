@@ -1,20 +1,20 @@
 import { createElement } from '../../utils/createElement';
 import './character.css';
 
-export function createCharacterCard(): HTMLElement {
+export function createCharacterCard(character): HTMLElement {
   return createElement('article', {
     className: 'character-card',
     childElements: [
       createElement('img', {
         className: 'character-card__image',
-        src: 'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
+        src: character.image,
       }),
       createElement('section', {
         className: 'character-card__info',
         childElements: [
           createElement('h2', {
             className: 'character-card__name',
-            innerText: 'Rick Sanchez',
+            innerText: character.name,
           }),
           createElement('div', {
             className: 'character-card__status',
@@ -25,11 +25,11 @@ export function createCharacterCard(): HTMLElement {
               }),
               createElement('p', {
                 className: 'character-card__status--text',
-                innerText: 'Alive',
+                innerText: character.status,
               }),
               createElement('p', {
                 className: 'character-card__status--species',
-                innerText: 'Human',
+                innerText: character.species,
               }),
             ],
           }),
@@ -37,7 +37,7 @@ export function createCharacterCard(): HTMLElement {
             className: 'character-card__location',
             childElements: [
               createElement('h3', { innerText: 'Last known location:' }),
-              createElement('p', { innerText: 'Story Train' }),
+              createElement('p', { innerText: character.location }),
             ],
           }),
         ],
