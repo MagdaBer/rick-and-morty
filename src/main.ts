@@ -4,6 +4,14 @@ import { createElement } from './utils/createElement';
 
 const app = document.querySelector<HTMLDivElement>('#app');
 
+const character = {
+  name: 'Aqua Rick',
+  status: 'unknown',
+  species: 'Humanoid',
+  location: 'Citadel of Ricks',
+  image: 'https://rickandmortyapi.com/api/character/avatar/22.jpeg',
+};
+
 const mainElement = createElement('main', {
   childElements: [
     createElement('h1', {
@@ -17,9 +25,9 @@ const mainElement = createElement('main', {
     createElement('div', {
       className: 'app__characterContainer',
       childElements: [
-        createCharacterCard(),
-        createCharacterCard(),
-        createCharacterCard(),
+        createCharacterCard(character),
+        createCharacterCard(character),
+        createCharacterCard(character),
       ],
     }),
   ],
