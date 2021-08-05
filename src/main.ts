@@ -12,6 +12,7 @@ const characterContainer = createElement('div', {
 });
 
 const searchbar = createElement('input', {
+  className: 'app__userInput',
   placeholder: 'Search for a character',
   oninput: async () => {
     characterContainer.innerHTML = '';
