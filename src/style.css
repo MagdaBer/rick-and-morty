@@ -1,8 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #fff;
   margin-top: 60px;
+}
+
+.app__title {
+  font-family: 'Creepster', cursive;
+  font-size: 4rem;
+  color: #2c3e50;
+}
+
+.app__userInput {
+  font-family: 'Creepster', cursive;
+  font-size: 2rem;
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 0.1em solid #2c3e50;
+}
+.app__userInput::placeholder {
+  color: orange;
+}
+.app__characterContainer {
+  padding: 3em;
+  grid-gap: 2em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 }
