@@ -2,23 +2,9 @@ import { createCharacterCard } from './components/character/character';
 import './style.css';
 import type { Character } from './types';
 import { createElement } from './utils/createElement';
+import { getCharacters } from './utils/api';
 
-const characters: Character[] = [
-  {
-    name: 'Aqua Rick',
-    status: 'unknown',
-    species: 'Humanoid',
-    location: 'Citadel of Ricks',
-    image: 'https://rickandmortyapi.com/api/character/avatar/22.jpeg',
-  },
-  {
-    name: 'Alien Spa Employee',
-    status: 'Alive',
-    species: 'Alien',
-    location: 'Alien Day Spa',
-    image: 'https://rickandmortyapi.com/api/character/avatar/470.jpeg',
-  },
-];
+const characters: Character[] = await getCharacters();
 
 const mainElement = createElement('main', {
   childElements: [
