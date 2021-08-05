@@ -2,6 +2,9 @@ import { createCharacterCard } from './components/character/character';
 import './style.css';
 import type { Character } from './types';
 import { createElement } from './utils/createElement';
+import { getCharacters } from './utils/api';
+
+getCharacters();
 
 const characters: Character[] = [
   {
