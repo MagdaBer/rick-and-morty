@@ -6,22 +6,32 @@ import { getCharacters } from './utils/api';
 
 const characters: Character[] = await getCharacters();
 
+const characterContainer = createElement('div', {
+  className: 'app__characterContainer',
+  childElements: characters.map((character) => createCharacterCard(character)),
+});
+
+const searchbar = createElement('input', {
+  placeholder: 'Search for a character',
+  oninput: async () => {
+    characterContainer.innerHTML = '';
+    const search = searchbar.value;
+    const filteredCharacters = await getCharacters(search);
+    const filteredCharacterElements = filteredCharacters.map(
+      (filteredCharacter) => createCharacterCard(filteredCharacter)
+    );
+    characterContainer.append(...filteredCharacterElements);
+  },
+});
+
 const mainElement = createElement('main', {
   childElements: [
     createElement('h1', {
       innerText: 'Rick and Morty',
       className: 'app__title',
     }),
-    createElement('input', {
-      placeholder: 'Search for a character...',
-      className: 'app__userInput',
-    }),
-    createElement('div', {
-      className: 'app__characterContainer',
-      childElements: characters.map((character) =>
-        createCharacterCard(character)
-      ),
-    }),
+    searchbar,
+    characterContainer,
   ],
 });
 document.querySelector<HTMLDivElement>('#app')?.append(mainElement);
