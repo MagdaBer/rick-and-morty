@@ -3,8 +3,6 @@ import './style.css';
 import type { Character } from './types';
 import { createElement } from './utils/createElement';
 
-const app = document.querySelector<HTMLDivElement>('#app');
-
 const characters: Character[] = [
   {
     name: 'Aqua Rick',
@@ -40,6 +38,4 @@ const mainElement = createElement('main', {
     }),
   ],
 });
-if (app !== null) {
-  app.append(mainElement);
-}
+document.querySelector<HTMLDivElement>('#app')?.append(mainElement);
